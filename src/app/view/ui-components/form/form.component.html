@@ -1,0 +1,53 @@
+
+
+<div class="container"  novalidate>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Title" formControlName="title">
+      <mat-error *ngIf="!formGroup.controls['title'].valid && formGroup.controls['title'].touched">
+        {{ getErrorTitle() }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Price" formControlName="price">
+      <mat-error *ngIf="!formGroup.controls['price'].valid && formGroup.controls['price'].touched">
+        {{ getErrorPrice() }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="URL Image" formControlName="imageUrl">
+      <mat-error *ngIf="!formGroup.controls['imageUrl'].valid && formGroup.controls['imageUrl'].touched">
+        Required field
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <textarea matInput placeholder="Description" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" formControlName="description"></textarea>
+      <mat-error *ngIf="!formGroup.controls['description'].valid && formGroup.controls['description'].touched">
+        Required field, must be between 5 and 20 characters.
+      </mat-error>
+    </mat-form-field>
+
+     <mat-form-field class="form-element">
+      <input matInput placeholder="Category" formControlName="category">
+      <mat-error *ngIf="!formGroup.controls['category'].valid && formGroup.controls['category'].touched">
+        Required field
+      </mat-error>
+    </mat-form-field>
+    <div class="form-element" *ngIf="!detail">
+      <button *ngIf="edit"mat-raised-button  color="primary"  type="submit" class="button"[disabled]="!formGroup.valid">Update Game</button>
+      <button *ngIf="!edit"mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Save Game</button>
+    </div>
+
+
+  </form>
+</div>
+
+<!-- <ng-template #forminfo>
+  <div class="container">
+    {{ post | json }}
+  </div>
+</ng-template> -->

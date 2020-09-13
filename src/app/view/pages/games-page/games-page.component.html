@@ -1,0 +1,20 @@
+<section fxLayout='column' fxLayoutAlign="space-around center">
+  <div>
+    <div fxFlex.xs="80vw" fxFlex.sm="65vw" fxFlex.lg="45vw">
+      <h2>Agregar Juego</h2>
+      <app-form
+      [game]="gameInput"
+      [edit]="true"
+      (post)="saveGame($event)"
+      ></app-form>
+      <br>
+      {{ showGame | json }}
+
+
+
+
+      <br>
+
+    </div>
+  </div>
+</section>
