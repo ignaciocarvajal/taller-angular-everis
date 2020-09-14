@@ -7,7 +7,7 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./games-update-page.component.scss']
 })
 export class GamesUpdatePageComponent implements OnInit {
-
+  gameInput: any;
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -15,5 +15,7 @@ export class GamesUpdatePageComponent implements OnInit {
       console.log('paramas update -->', params);
     });
   }
+
+  saveGame(plan: any) {}
 
 }

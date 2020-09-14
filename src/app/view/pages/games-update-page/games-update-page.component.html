@@ -1,1 +1,16 @@
-<p>games-update-page works!</p>
+<section fxLayout='column' fxLayoutAlign="space-around center">
+  <div>
+    <div fxFlex.xs="80vw" fxFlex.sm="65vw" fxFlex.lg="45vw">
+      <h2>Editar Juego</h2>
+      <app-form
+      [game]="gameInput"
+      [edit]="true"
+      [detail]="false"
+      (post)="saveGame($event)"
+      ></app-form>
+      <br>
+      <br>
+
+    </div>
+  </div>
+</section>

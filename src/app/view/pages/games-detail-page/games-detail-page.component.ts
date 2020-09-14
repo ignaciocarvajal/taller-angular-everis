@@ -7,13 +7,17 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./games-detail-page.component.scss']
 })
 export class GamesDetailPageComponent implements OnInit {
-
+  gameInput: any;
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       console.log('paramas detail->', params);
     });
+  }
+
+  saveGame(game: any) {
+
   }
 
 }

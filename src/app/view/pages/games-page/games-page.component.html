@@ -5,14 +5,10 @@
       <app-form
       [game]="gameInput"
       [edit]="true"
+      [detail]="false"
       (post)="saveGame($event)"
       ></app-form>
       <br>
-      {{ showGame | json }}
-
-
-
-
       <br>
 
     </div>

@@ -19,7 +19,7 @@ export class FormComponent implements OnInit {
 
   @Input() game: IGame;
   @Input() edit: boolean;
-  @Input() detail: boolean = true;
+  @Input() detail: boolean;
   @Output() post: EventEmitter<IGame> = new EventEmitter<IGame>();
 
 
