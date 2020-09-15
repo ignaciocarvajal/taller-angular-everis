@@ -2,7 +2,6 @@ import { IGame } from './../../ui-components/form/models/game.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GamesService } from 'src/app/core/services/games.service';
-import { info } from 'console';
 
 @Component({
   selector: 'app-games-page',
