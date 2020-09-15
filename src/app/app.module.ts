@@ -11,6 +11,7 @@ import { GamesDetailPageModule } from './view/pages/games-detail-page/games-deta
 import { GamesUpdatePageModule } from './view/pages/games-update-page/games-update-page.module';
 import { HeaderModule } from './view/ui-components/header/header.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterModule } from './view/ui-components/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     GamesUpdatePageModule,
     FlexLayoutModule,
     HeaderModule,
+    FooterModule,
     HttpClientModule
   ],
   providers: [],

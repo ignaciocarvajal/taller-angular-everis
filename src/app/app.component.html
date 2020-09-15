@@ -1,5 +1,5 @@
 <header>
-  <app-header (addGame)="redirectCreatePage()"></app-header>
+  <app-header (addGame)="redirectCreatePage()" (goHomePage)="goHomePage()"></app-header>
 </header>
 
 <main class="container">
@@ -11,4 +11,6 @@
   </div>
 </main>
 
-<footer>footer</footer>
+<footer>
+  <app-footer></app-footer>
+</footer>

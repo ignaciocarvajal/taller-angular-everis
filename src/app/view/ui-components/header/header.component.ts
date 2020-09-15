@@ -7,6 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Output() addGame: EventEmitter<any> = new EventEmitter<any>();
+  @Output() goHomePage: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
@@ -15,6 +16,10 @@ export class HeaderComponent implements OnInit {
 
   add() {
     this.addGame.emit();
+  }
+
+  goHome(){
+    this.goHomePage.emit();
   }
 
 }

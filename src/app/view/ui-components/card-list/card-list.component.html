@@ -17,11 +17,13 @@
         <p>{{ game.description }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button (click)="detail(game._id)">DETALLE</button>
-        <button mat-button (click)="modify(game._id)">EDITAR</button>
-        <button mat-icon-button aria-label="add icon" (click)="delete(game._id)">
-          <mat-icon>delete</mat-icon>
-        </button>
+        <div fxLayout="row" fxLayoutAlign="center end">
+          <button mat-button (click)="detail(game._id)">DETALLE</button>
+          <button mat-button (click)="modify(game._id)">EDITAR</button>
+          <button mat-icon-button aria-label="add icon" (click)="delete(game._id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
       </mat-card-actions>
     </mat-card>
   </div>

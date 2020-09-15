@@ -16,4 +16,8 @@ export class AppComponent {
   redirectCreatePage() {
     this.router.navigate(['/games/create']);
   }
+
+  goHomePage() {
+    this.router.navigate(['/']);
+  }
 }
