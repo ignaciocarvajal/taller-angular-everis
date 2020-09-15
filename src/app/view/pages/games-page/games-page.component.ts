@@ -1,6 +1,8 @@
 import { IGame } from './../../ui-components/form/models/game.model';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { GamesService } from 'src/app/core/services/games.service';
+import { info } from 'console';
 
 @Component({
   selector: 'app-games-page',
@@ -12,23 +14,23 @@ export class GamesPageComponent implements OnInit {
   showGame: IGame;
   gameInput: IGame;
 
-  constructor() {
-    this.gameInput = {
-      title: 'final Fantasy',
-      price: 34453,
-      imageUrl:
-        'https://images-na.ssl-images-amazon.com/images/I/71XoTXkseJL._AC_SY879_.jpg',
-      description: 'juego Fantasia',
-      category: 'RPG',
-    };
-  }
+  constructor(
+    private readonly router: Router,
+    private readonly gamesService: GamesService
+  ) {}
 
   ngOnInit(): void {
 
   }
 
   saveGame(game: IGame) {
-    console.log('save game -->', game);
-    this.showGame = game;
+   this.gamesService.create(game).subscribe((res: any) => {
+    console.info('save game',res);
+    this.router.navigate(['/']);
+   })
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 }

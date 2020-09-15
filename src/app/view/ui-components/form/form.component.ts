@@ -26,37 +26,39 @@ export class FormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.createForm();
+
     if (this.edit) {
-      this.loadForm(this.game);
+      this.createForm(this.game);
+    }else{
+      this.createForm();
     }
   }
 
 
-  createForm() {
+  createForm(game?: IGame) {
     this.formGroup = this.formBuilder.group({
-      title: [{value: null, disabled: this.detail}, [Validators.required, Validators.minLength(5)]],
-      price: [{value: null, disabled: this.detail}, [Validators.required, Validators.pattern('^[0-9]*$')]],
-      imageUrl: [{value: null, disabled: this.detail}, Validators.required],
+      title: [{value: game ? game.title : null, disabled: this.detail}, [Validators.required, Validators.minLength(5)]],
+      price: [{value: game ? game.price : null, disabled: this.detail}, [Validators.required, Validators.pattern('^[0-9]*$')]],
+      imageUrl: [{value: game ? game.imageUrl : null, disabled: this.detail}, Validators.required],
       description: [
-        {value: null, disabled: this.detail},
+        {value: game ? game.description : null, disabled: this.detail},
         [
           Validators.required,
           Validators.minLength(5),
-          Validators.maxLength(20),
+          Validators.maxLength(140),
         ],
       ],
-      category: [{value: null, disabled: this.detail}, Validators.required],
+      category: [{value: game ? game.category : null, disabled: this.detail}, Validators.required],
     });
   }
 
-  loadForm(game) {
-    this.formGroup.controls['title'].setValue(game.title);
-    this.formGroup.controls['price'].setValue(game.price);
-    this.formGroup.controls['imageUrl'].setValue(game.imageUrl);
-    this.formGroup.controls['description'].setValue(game.description);
-    this.formGroup.controls['category'].setValue(game.category);
-  }
+  // loadForm(game) {
+  //   this.formGroup.controls['title'].setValue(game.title);
+  //   this.formGroup.controls['price'].setValue(game.price);
+  //   this.formGroup.controls['imageUrl'].setValue(game.imageUrl);
+  //   this.formGroup.controls['description'].setValue(game.description);
+  //   this.formGroup.controls['category'].setValue(game.category);
+  // }
 
   get title() {
     return this.formGroup.get('title') as FormControl;

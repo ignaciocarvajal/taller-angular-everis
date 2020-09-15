@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { GamesDetailPageModule } from './view/pages/games-detail-page/games-detail-page.module';
 import { GamesUpdatePageModule } from './view/pages/games-update-page/games-update-page.module';
 import { HeaderModule } from './view/ui-components/header/header.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HeaderModule } from './view/ui-components/header/header.module';
     GamesDetailPageModule,
     GamesUpdatePageModule,
     FlexLayoutModule,
-    HeaderModule
+    HeaderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

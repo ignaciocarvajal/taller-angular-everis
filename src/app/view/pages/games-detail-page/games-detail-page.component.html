@@ -1,15 +1,16 @@
 <section fxLayout='column' fxLayoutAlign="space-around center">
   <div>
     <div fxFlex.xs="80vw" fxFlex.sm="65vw" fxFlex.lg="45vw">
-      <h2>Agregar Juego</h2>
+      <h2>Detalle del Juego</h2>
       <app-form
-      [game]="gameInput"
+      *ngIf="game"
+      [game]="game"
       [edit]="true"
       [detail]="true"
-      (post)="saveGame($event)"
       ></app-form>
-      <br>
-      <br>
+      <div class="form-element" >
+        <button mat-raised-button color="accent" class="button" (click)="goHome()">Volver</button>
+      </div>
 
     </div>
   </div>

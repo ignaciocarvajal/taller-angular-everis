@@ -3,13 +3,13 @@
     <div fxFlex.xs="80vw" fxFlex.sm="65vw" fxFlex.lg="45vw">
       <h2>Agregar Juego</h2>
       <app-form
-      [game]="gameInput"
-      [edit]="true"
+      [edit]="false"
       [detail]="false"
       (post)="saveGame($event)"
       ></app-form>
-      <br>
-      <br>
+      <div class="form-element" >
+        <button mat-raised-button color="accent" class="button" (click)="goHome()">Volver</button>
+      </div>
 
     </div>
   </div>

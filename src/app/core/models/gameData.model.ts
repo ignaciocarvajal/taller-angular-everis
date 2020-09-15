@@ -1,5 +1,4 @@
-
-export interface IGame {
+export interface IGameModel {
   _id?: string,
   title?: string,
   price?: number,

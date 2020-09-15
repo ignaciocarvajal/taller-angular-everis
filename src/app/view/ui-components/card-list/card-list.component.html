@@ -3,22 +3,25 @@
     fxFlex="25%"
     fxFlex.xs="100%"
     fxFlex.sm="33%"
-    *ngFor="let num of [1, 2, 3, 4, 5, 6, 7]"
+    *ngFor="let game of games | async"
   >
     <mat-card class="mat-elevation-z4">
       <mat-card-header>
-        <mat-card-title>Mountains {{ num }}</mat-card-title>
+        <mat-card-title>{{ game.title }}</mat-card-title>
       </mat-card-header>
       <img
         mat-card-image
-        src="https://images-na.ssl-images-amazon.com/images/I/717wQPO-cYL._SL1200_.jpg"
+        [src]="game.imageUrl"
       />
       <mat-card-content>
-        <p>The Himalayas is a mountain range in Asia.</p>
+        <p>{{ game.description }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>DETALLE</button>
-        <button mat-button>EDITAR</button>
+        <button mat-button (click)="detail(game._id)">DETALLE</button>
+        <button mat-button (click)="modify(game._id)">EDITAR</button>
+        <button mat-icon-button aria-label="add icon" (click)="delete(game._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

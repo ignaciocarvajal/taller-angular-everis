@@ -1,1 +1,6 @@
-<app-card-list></app-card-list>
+<app-card-list
+  [games]="games"
+  (goDetail)="goDetail($event)"
+  (goModify)="goModify($event)"
+  (goDelete)="goDelete($event)"
+></app-card-list>

@@ -5,6 +5,7 @@ import { GamesPageRoutingModule } from './games-page-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormModule } from '../../ui-components/form/form.module';
 import { GamesPageComponent } from './games-page.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { GamesPageComponent } from './games-page.component';
   imports: [
     CommonModule,
     FormModule,
+    MatButtonModule,
     FlexLayoutModule,
     GamesPageRoutingModule
   ],
